@@ -43,5 +43,5 @@ nohup bash -c 'cd demo16 && uv run python src/agent.py dev' \
   > /tmp/agent.log 2>&1 &
 
 # Expose via ngrok
-nohup ngrok http 8080 \
+nohup ngrok http --url=unsuperfluously-consentaneous-fletcher.ngrok-free.app 8080 \
   > /tmp/ngrok.log 2>&1 &
