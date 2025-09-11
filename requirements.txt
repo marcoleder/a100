@@ -92,3 +92,6 @@ python-json-logger
 # Install the main packages
 nemo_toolkit[asr]
 vllm
+pyngrok
+huggingface_hub
+uv
