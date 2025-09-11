@@ -1,14 +1,8 @@
-# Core Python packages
+# Core
 numpy==1.26.4
-setuptools>=70.0.0
+flashinfer-python
 
-# PyTorch ecosystem (required by both NeMo and vLLM)
-torch
-torchaudio
-torchvision
-triton
-
-# Install the main packages
+# Main packages
 nemo_toolkit[asr]
 vllm
 pyngrok
