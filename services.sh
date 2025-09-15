@@ -20,19 +20,19 @@ nohup vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507 \
   > /tmp/vllm.log 2>&1 &
 
 # Launch NeMo
-HYDRA_FULL_ERROR=1 nohup uv run python ./speech_to_text_streaming_infer_rnnt.py \
-  pretrained_name="nvidia/parakeet-tdt-0.6b-v3" \
-  compute_dtype="float16" \
-  decoding.greedy.use_cuda_graph_decoder=False \
-  model_path=null \
-  dataset_manifest="/content/input_manifest.json" \
-  +output_filename="transcription_results.json" \
-  batch_size=32 \
-  chunk_secs=2.0 \
-  left_context_secs=10.0 \
-  right_context_secs=2.0 \
-  clean_groundtruth_text=False \
-  > /tmp/nemo.log 2>&1 &
+#HYDRA_FULL_ERROR=1 nohup uv run python ./speech_to_text_streaming_infer_rnnt.py \
+#  pretrained_name="nvidia/parakeet-tdt-0.6b-v3" \
+#  compute_dtype="float16" \
+#  decoding.greedy.use_cuda_graph_decoder=False \
+#  model_path=null \
+#  dataset_manifest="/content/input_manifest.json" \
+#  +output_filename="transcription_results.json" \
+#  batch_size=32 \
+#  chunk_secs=2.0 \
+#  left_context_secs=10.0 \
+#  right_context_secs=2.0 \
+#  clean_groundtruth_text=False \
+#  > /tmp/nemo.log 2>&1 &
 
 # Launch LiveKit
 nohup livekit-server --dev --bind 0.0.0.0 \
