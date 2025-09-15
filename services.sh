@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Kill previous instances
+# Kill previous instances and files
 pkill -f "vllm|ngrok|livekit-server|speech_to_text_streaming_infer_rnnt|agent.py"
+rm -rf /tmp/vllm.log /tmp/livekit.log /tmp/agent.log /tmp/ngrok.log /tmp/fe.log
 
 # Launch vLLM
 nohup vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507 \
