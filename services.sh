@@ -17,7 +17,7 @@ nohup vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507 \
   --max-model-len 65536 \
   --tensor-parallel-size 1 \
   --enable-expert-parallel \
-  --gpu-memory-utilization 0.85 \
+  --gpu-memory-utilization 0.9 \
   > /tmp/vllm.log 2>&1 &
 
 # Launch NeMo
@@ -36,17 +36,17 @@ nohup vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507 \
 #  > /tmp/nemo.log 2>&1 &
 
 # Launch LiveKit
-nohup livekit-server --dev --bind 0.0.0.0 \
-  > /tmp/livekit.log 2>&1 &
+#nohup livekit-server --dev --bind 0.0.0.0 \
+#  > /tmp/livekit.log 2>&1 &
 
 # Launch agent
-nohup bash -c 'cd demo16 && uv run python src/agent.py dev' \
-  > /tmp/agent.log 2>&1 &
+#nohup bash -c 'cd demo16 && uv run python src/agent.py dev' \
+#  > /tmp/agent.log 2>&1 &
 
 # Launch frontend
-nohup bash -c 'cd fe16n && npx pnpm dev' \
-  > /tmp/fe.log 2>&1 &
+#nohup bash -c 'cd fe16n && npx pnpm dev' \
+#  > /tmp/fe.log 2>&1 &
 
 # Expose via ngrok
-nohup ngrok http --url=unsuperfluously-consentaneous-fletcher.ngrok-free.app 3000 \
+nohup ngrok http --url=unsuperfluously-consentaneous-fletcher.ngrok-free.app 8000 \
   > /tmp/ngrok.log 2>&1 &
